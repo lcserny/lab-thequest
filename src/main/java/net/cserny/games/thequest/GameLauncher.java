@@ -1,22 +1,25 @@
 package net.cserny.games.thequest;
 
+import javafx.application.Application;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import net.cserny.games.thequest.item.Potion;
 import net.cserny.games.thequest.location.Rectangle;
 
 import java.util.Random;
 
-public class GameLauncher {
+public class GameLauncher extends Application {
 
     private Game game;
     private Random random = new Random();
     private ImageView[] slots;
 
     public static void main(String[] args) {
-        new GameLauncher().launch();
+        launch(args);
     }
 
-    private void launch() {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         game = new Game(new Rectangle(78, 57, 420, 155));
         /*slots = new ImageView[]{inventorySword, inventoryBluePotion, inventoryBow, inventoryRedPotion,
                 inventoryMace, inventoryBomb, inventoryBattleaxe, inventoryShield};*/
